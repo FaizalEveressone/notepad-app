@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✅ Minhas Checklists</h1>
+            <a href="/" class="back-btn">← Voltar</a>
+        </header>
+
+        <div class="checklist-form">
+            <h2>Nova Checklist</h2>
+            <form id="checklistForm">
+                <input type="text" id="checklistTitle" placeholder="Título da checklist" required>
+                <div id="itemsContainer">
+                    <div class="item-input">
+                        <input type="text" placeholder="Item da lista" class="item-text" required>
+                        <button type="button" class="remove-item" onclick="removeItem(this)">×</button>
+                    </div>
+                </div>
+                <button type="button" onclick="addItem()">➕ Adicionar Item</button>
+                <button type="submit">💾 Salvar Checklist</button>
+            </form>
+        </div>
+
+        <div class="checklists-list" id="checklistsList">
+            <h2>Checklists Salvas</h2>
+            <div id="checklistsContainer"></div>
+        </div>
+    </div>
+
+    <script src="checklist.js"></script>
+</body>
+</html>
