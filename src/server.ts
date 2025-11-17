@@ -11,14 +11,13 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-// Servir arquivos estáticos
 app.use(express.static(path.join(__dirname, '../public')));
 
 // Routes
 app.use('/api/notes', noteRoutes);
 app.use('/api/checklists', checklistRoutes);
 
-// Rotas para as páginas
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html'));
 });

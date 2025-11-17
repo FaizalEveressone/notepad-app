@@ -4,7 +4,7 @@ import { PrismaClient } from '@prisma/client';
 const router = Router();
 const prisma = new PrismaClient();
 
-// GET /api/checklists - Buscar todas as checklists com seus itens
+
 router.get('/', async (req, res) => {
     try {
         const checklists = await prisma.checklist.findMany({
@@ -47,7 +47,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-// PUT /api/checklists/:checklistId/items/:itemId/toggle - Alternar estado do item
+
 router.put('/:checklistId/items/:itemId/toggle', async (req, res) => {
     const checklistId = parseInt(req.params.checklistId);
     const itemId = parseInt(req.params.itemId);
@@ -72,7 +72,6 @@ router.put('/:checklistId/items/:itemId/toggle', async (req, res) => {
     }
 });
 
-// DELETE /api/checklists/:id - Excluir checklist
 router.delete('/:id', async (req, res) => {
     const id = parseInt(req.params.id);
 
